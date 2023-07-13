@@ -19,7 +19,7 @@ public class UserController {
 	
 	@PostMapping("/register")
 	public User createUser(@RequestBody User user) {
-		System.out.println(user.getPassword());
+		user.setPassword(PasswordUtils.hashedPassword(user.getPassword()));
 		return userRepository.save(user);
 	}
 }
