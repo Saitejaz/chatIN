@@ -1,25 +1,34 @@
 package com.chatapp.main.Auth.Registration;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/users")
 public class UserController {
+	
+    private final UserService userService;
 
-	private final UserRepository userRepository;
-	
-	@Autowired
-	public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
-	}
-	
-	@PostMapping("/register")
-	public User createUser(@RequestBody User user) {
-		user.setPassword(PasswordUtils.hashedPassword(user.getPassword()));
-		return userRepository.save(user);
-	}
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping("/addUser")
+    public User createUser(@RequestBody User user) {	
+    	user.setPassword(PasswordUtils.hashedPassword(user.getPassword())); 
+        return userService.createUser(user);
+    }
+
+    @GetMapping("/fetchUsers")
+    public List<User> getAllUsers() {
+        return userService.getAllUsers();
+    }
+
 }

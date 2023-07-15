@@ -11,7 +11,7 @@ public class User {
 	private String userName;
 	private String userEmail;
 	private String password;
-    private String registeredDate;
+    
 	public String getUserName() {
 		return userName;
 	}
@@ -30,11 +30,6 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getRegisteredDate() {
-		return registeredDate;
-	}
-	public void setRegisteredDate(String registeredDate) {
-		this.registeredDate = registeredDate;
-	}
+
 	
 }
