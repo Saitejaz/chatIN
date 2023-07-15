@@ -1,9 +1,12 @@
-package com.chatapp.main.Auth.Registration;
+package com.chatapp.main.Services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.chatapp.main.Models.User;
+import com.chatapp.main.Repositories.UserRepository;
 
 @Service
 public class UserService {

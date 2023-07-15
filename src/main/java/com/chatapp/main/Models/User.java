@@ -1,4 +1,4 @@
-package com.chatapp.main.Auth.Registration;
+package com.chatapp.main.Models;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;

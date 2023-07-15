@@ -1,4 +1,4 @@
-package com.chatapp.main;
+package com.chatapp.main.SecurityConfigs;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

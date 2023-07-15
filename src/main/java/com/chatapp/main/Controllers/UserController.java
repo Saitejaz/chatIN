@@ -1,4 +1,4 @@
-package com.chatapp.main.Auth.Registration;
+package com.chatapp.main.Controllers;
 
 import java.util.List;
 
@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.chatapp.main.Models.User;
+import com.chatapp.main.Services.UserService;
+import com.chatapp.main.Utilities.PasswordUtils;
 
 @RestController
 @RequestMapping("/users")

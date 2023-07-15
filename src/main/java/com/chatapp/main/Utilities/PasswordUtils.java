@@ -1,4 +1,4 @@
-package com.chatapp.main.Auth.Registration;
+package com.chatapp.main.Utilities;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
