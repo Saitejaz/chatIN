@@ -21,6 +21,10 @@ public class UserService {
     public List<User> getAllUsers() {
         return userRepository.findAll();
     }
+    
+    public boolean userAlreadyExists(String email) {
+    	return userRepository.existsByEmail(email);
+    }
 
 }
 

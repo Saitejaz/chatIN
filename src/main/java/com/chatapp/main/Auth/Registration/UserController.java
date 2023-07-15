@@ -21,14 +21,20 @@ public class UserController {
     }
 
     @PostMapping("/addUser")
-    public User createUser(@RequestBody User user) {	
+    public String createUser(@RequestBody User user) {
+    	if(userService.userAlreadyExists(user.getUserEmail())) {
+    		return "User already exists!";
+    	}
     	user.setPassword(PasswordUtils.hashedPassword(user.getPassword())); 
-        return userService.createUser(user);
+    	userService.createUser(user);
+        return "New User Registered a user successfully!!";
     }
 
     @GetMapping("/fetchUsers")
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
+    
+    
 
 }

@@ -9,7 +9,7 @@ public class User {
 	@Id
 	private String id;
 	private String userName;
-	private String userEmail;
+	private String email;
 	private String password;
     
 	public String getUserName() {
@@ -19,10 +19,10 @@ public class User {
 		this.userName = userName;
 	}
 	public String getUserEmail() {
-		return userEmail;
+		return email;
 	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setUserEmail(String email) {
+		this.email = email;
 	}
 	public String getPassword() {
 		return password;
