@@ -11,6 +11,7 @@ public class User {
 	private String userName;
 	private String email;
 	private String password;
+	private String timeStamp;
     
 	public String getUserName() {
 		return userName;
@@ -27,9 +28,15 @@ public class User {
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	public String getTimeStamp() {
+		return timeStamp;
+	}
+	public void setTimeStamp(String timeStamp) {
+		this.timeStamp = timeStamp;
+	}
 	
 }
