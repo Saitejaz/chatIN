@@ -27,18 +27,25 @@ public class UserAuthController {
 
     @PostMapping("/register")
     public String createUser(@RequestBody User user) {
-    	if(userService.userAlreadyExists(user.getUserEmail())) {
+    	if(userService.userAlreadyExists(user.getUserEmail())) {	
     		return "User already exists!";
     	}
+
     	user.setTimeStamp(Timestamp.getTodayDate());
     	user.setPassword(PasswordUtils.hashedPassword(user.getPassword())); 
     	userService.createUser(user);
         return "New User Registered Successfully!!";
     }
 
-    @PostMapping("/login")
-    public String userLogin(@RequestBody String userName,String userPassword) {
-    	return ""+userName+" "+userPassword;
+    @GetMapping("/login")
+    public User userLogin(@RequestBody String email) {
+    	System.out.println(email);
+    	User valid = userService.getUserByEmail(email);
+    	
+//    	if(PasswordUtils.verifyPassword(password, valid.getPassword())) {
+//    		return valid;
+//    	}
+    	return valid;
     }
     
     @GetMapping("/fetchUsers")

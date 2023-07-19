@@ -12,4 +12,8 @@ public class PasswordUtils {
 		return passwordEncoder.encode(password);
 	}
 	
+	public static boolean verifyPassword(String rawPassword,String hashedPassword) {
+		return passwordEncoder.matches(rawPassword,hashedPassword);
+	}
+	
 }
